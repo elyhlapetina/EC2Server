@@ -1,0 +1,22 @@
+{
+  "name": "ec2server",
+  "version": "1.0.0",
+  "description": "Ec2 server for interfacing with ESP8266 + other projects.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elyhlapetina/EC2Server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elyhlapetina/EC2Server/issues"
+  },
+  "homepage": "https://github.com/elyhlapetina/EC2Server#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
