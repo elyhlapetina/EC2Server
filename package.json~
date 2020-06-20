@@ -4,9 +4,7 @@
   "description": "Ec2 server for interfacing with ESP8266 + other projects.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "restart": "pm2 startOrRestart ecosystem.config.js",
-    "deploy": "pm2 deploy ecosystem.config.js production"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -20,8 +18,5 @@
   "homepage": "https://github.com/elyhlapetina/EC2Server#readme",
   "dependencies": {
     "express": "^4.17.1"
-  },
-  "devDependencies": {
-    "pm2": "^4.4.0"
   }
 }
