@@ -2,8 +2,10 @@ const express = require('express')
 const app = express()
 
 
+let fileScope = "Can be accessed anywhere in the file";
+
 app.get('/', (req, res) => {
-  res.send('Commit this!')
+  res.send(fileScope)
 })
 
 app.post('/post-test', (req, res) => {
