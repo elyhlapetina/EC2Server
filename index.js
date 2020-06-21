@@ -1,8 +1,9 @@
 const express = require('express')
 const app = express()
 
-
 let fileScope = "Can be accessed anywhere in the file";
+
+app.use(bodyParser.urlencoded({ extended: true }))
 
 app.get('/', (req, res) => {
   res.send(fileScope)
@@ -10,7 +11,7 @@ app.get('/', (req, res) => {
 
 app.post('/post-test', (req, res) => {
 	fileScope = req.body.message;
-    console.log('Got body:', req.body);
+    console.log('Got body:', req.body.message);
     res.sendStatus(200);
 });
 
