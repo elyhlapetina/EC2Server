@@ -1,13 +1,14 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
+const bodyParser = require("body-parser");
 
 let fileScope = "Can be accessed anywhere in the file";
 
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
   res.send(fileScope)
-})
+});
 
 app.post('/post-test', (req, res) => {
 	fileScope = req.body.message;
