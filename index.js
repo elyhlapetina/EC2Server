@@ -9,6 +9,7 @@ app.get('/', (req, res) => {
 })
 
 app.post('/post-test', (req, res) => {
+	fileScope = req.body;
     console.log('Got body:', req.body);
     res.sendStatus(200);
 });
