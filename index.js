@@ -23,7 +23,7 @@ wss.on('connection', ws => {
   ws.on('message', message => {
     console.log(`Received message => ${message}`)
   })
-  ws.send('Hello! Message From Server!!')
+  ws.send(fileScope)
 })
 
 app.listen(3000, () => console.log('Server running on port 3000'))
