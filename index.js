@@ -1,5 +1,17 @@
+
+import * as express from 'express';
+import * as http from 'http';
+import * as WebSocket from 'ws';
+
 const express = require('express');
-const app = express();
+const enableWs = require('express-ws');
+
+const app = express()
+
+enableWs(app)
+
+
+
 const bodyParser = require("body-parser");
 
 const WebSocket = require('ws') 
@@ -18,12 +30,17 @@ app.post('/post-test', (req, res) => {
     console.log('Got body:', req.body.message);
     res.sendStatus(200);
 });
+
  
-wss.on('connection', ws => {
-  ws.on('message', message => {
-    console.log(`Received message => ${message}`)
-  })
-  ws.send(fileScope)
+app.ws('/echo', (ws, req) => {
+    ws.on('message', msg => {
+        ws.send(fileScope)
+    })
+
+    ws.on('close', () => {
+        console.log('WebSocket was closed')
+    })
 })
+
 
 app.listen(3000, () => console.log('Server running on port 3000'))
