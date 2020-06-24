@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
 });
 
 app.post('/post-test', (req, res) => {
-	fileScope = req.body.message;
+	fileScope = req.body.message + "test";
     console.log('Got body:', req.body.message);
     res.sendStatus(200);
 });
