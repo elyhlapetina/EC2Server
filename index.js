@@ -23,5 +23,17 @@ app.post('/post-test', (req, res) => {
     res.sendStatus(200);
 });
  
+app.ws('/echo', (ws, req) => {
+    ws.on('message', msg => {
+        ws.send(fileScope)
+    })
+
+    ws.on('close', () => {
+        console.log('WebSocket was closed')
+    })
+})
+
+
+
 
 app.listen(3000, () => console.log('Server running on port 3000'))
