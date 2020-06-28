@@ -5,7 +5,7 @@ const app = express();
 const bodyParser = require("body-parser");
 
 const wss = new WebSocket.Server({port:8080})
-
+let fileScope = "Can be accessed anywhere in the file";
 
 
 enableWs(app)
@@ -22,7 +22,7 @@ app.ws('/echo', (ws, req) => {
 
 
 
-let fileScope = "Can be accessed anywhere in the file";
+
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
