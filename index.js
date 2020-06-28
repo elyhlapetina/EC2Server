@@ -1,9 +1,26 @@
 const express = require('express');
+const enableWs = require('express-ws')
+
 const app = express();
 const bodyParser = require("body-parser");
 
-const WebSocket = require('ws') 
 const wss = new WebSocket.Server({port:8080})
+
+
+
+enableWs(app)
+
+app.ws('/echo', (ws, req) => {
+    ws.on('message', msg => {
+        ws.send(fileScope)
+    })
+
+    ws.on('close', () => {
+        console.log('WebSocket was closed')
+    })
+})
+
+
 
 let fileScope = "Can be accessed anywhere in the file";
 
@@ -19,11 +36,5 @@ app.post('/post-test', (req, res) => {
     res.sendStatus(200);
 });
  
-wss.on('/connection', ws => {
-  ws.on('message', message => {
-    console.log(`Received message => ${message}`)
-  })
-  ws.send(fileScope)
-})
 
 app.listen(3000, () => console.log('Server running on port 3000'))
