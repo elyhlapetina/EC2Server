@@ -2,29 +2,16 @@ const express = require('express');
 const enableWs = require('express-ws')
 
 const app = express();
-const bodyParser = require("body-parser");
-
-const wss = new WebSocket.Server({port:8080})
-let fileScope = "Can be accessed anywhere in the file";
-
-
 enableWs(app)
 
-app.ws('/echo', (ws, req) => {
-    ws.on('message', msg => {
-        ws.send(fileScope)
-    })
 
-    ws.on('close', () => {
-        console.log('WebSocket was closed')
-    })
-})
+const bodyParser = require("body-parser");
 
-
-
-
+let fileScope = "Can be accessed anywhere in the file";
 
 app.use(bodyParser.urlencoded({ extended: true }));
+
+
 
 app.get('/', (req, res) => {
   res.send(fileScope)
