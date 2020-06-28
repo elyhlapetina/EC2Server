@@ -24,6 +24,13 @@ app.post('/post-test', (req, res) => {
 });
  
 app.ws('/echo', (ws, req) => {
+
+	ws.on('connection', msg => {
+        ws.send(fileScope)
+    })
+
+
+
     ws.on('message', msg => {
         ws.send(fileScope)
     })
