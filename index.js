@@ -1,8 +1,8 @@
 const express = require('express');
-const enableWs = require('express-ws')
 
 const app = express();
-enableWs(app)
+const expressWs = require('express-ws')(app);
+
 
 
 const bodyParser = require("body-parser");
