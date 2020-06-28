@@ -3,7 +3,7 @@ const app = express();
 const bodyParser = require("body-parser");
 
 const WebSocket = require('ws') 
-const wss = new WebSocket.Server({ port: 8080 })
+const wss = new WebSocket.Server({port:3000})
 
 let fileScope = "Can be accessed anywhere in the file";
 
