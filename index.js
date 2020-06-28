@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require("body-parser");
 
-let fileScope = "{\"accel_x\": \"0\" , \"accel_y\" : \"0\" , \"accel_z\" : \"0\"}\"";
+let fileScope = "{\"accel_x\": \"0\" , \"accel_y\" : \"0\" , \"accel_z\" : \"0\"}";
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
