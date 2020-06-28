@@ -19,7 +19,7 @@ app.post('/post-test', (req, res) => {
     res.sendStatus(200);
 });
  
-wss.on('connection', ws => {
+wss.on('/connection', ws => {
   ws.on('message', message => {
     console.log(`Received message => ${message}`)
   })
