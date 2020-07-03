@@ -28,12 +28,13 @@ wss.on('connection', function connection(ws) {
 
 
 app.get('/', (req, res) => {
-  res.send(fileScope + "\n" + logs)
+  res.send(fileScope + '\n' + logs)
 });
 
 app.post('/post-test', (req, res) => {
 	fileScope = req.body.message;
 	ws.send(fileScope);
+	logs = logs + "<br> attemping to send message..."
     console.log('Got body:', req.body.message);
     res.sendStatus(200);
 
