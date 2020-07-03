@@ -28,7 +28,7 @@ wss.on('connection', function connection(ws) {
 			ws.send(fileScope);
 
 		}
-	}, 100);
+	}, 50);
 
   
 });
