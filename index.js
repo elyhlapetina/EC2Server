@@ -23,9 +23,16 @@ wss.on('connection', function connection(ws) {
     ws.send(fileScope);
   });
 
-  ws.send(fileScope);
+	setInterval(() => {
+		if (socket.bufferedAmount == 0) {
+			WS.send(fileScope);
+		}
+	}, 100);
+
   
 });
+
+
 
 
 app.get('/', (req, res) => {
@@ -34,16 +41,6 @@ app.get('/', (req, res) => {
 
 app.post('/post-test', (req, res) => {
 	fileScope = req.body.message;
-	logs = logs + "<br> attemping to send message...  "
-
-	try {
-  		ws.send(fileScope);
-	}
-	catch (e) {
-  		// statements to handle any exceptions
-  		logs = logs + e.message
-	}
-
 
     console.log('Got body:', req.body.message);
     res.sendStatus(200);
