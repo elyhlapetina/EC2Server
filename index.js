@@ -13,6 +13,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 const WebSocket = require('ws');
+
+
 const wss = new WebSocket.Server({ port: 8080 });
 
 wss.on('connection', function connection(ws) {
@@ -33,8 +35,17 @@ app.get('/', (req, res) => {
 
 app.post('/post-test', (req, res) => {
 	fileScope = req.body.message;
-	logs = logs + "<br> attemping to send message..."
-	ws.send(fileScope);
+	logs = logs + "<br> attemping to send message...  "
+
+	try {
+  		ws.send(fileScope);
+	}
+	catch (e) {
+  		// statements to handle any exceptions
+  		logs = logs + e.message
+	}
+
+
 
     console.log('Got body:', req.body.message);
     res.sendStatus(200);
