@@ -24,8 +24,9 @@ wss.on('connection', function connection(ws) {
   });
 
 	setInterval(() => {
-		if (socket.bufferedAmount == 0) {
+		if (ws.bufferedAmount == 0) {
 			ws.send(fileScope);
+
 		}
 	}, 100);
 
