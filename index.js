@@ -33,8 +33,9 @@ app.get('/', (req, res) => {
 
 app.post('/post-test', (req, res) => {
 	fileScope = req.body.message;
-	ws.send(fileScope);
 	logs = logs + "<br> attemping to send message..."
+	ws.send(fileScope);
+
     console.log('Got body:', req.body.message);
     res.sendStatus(200);
 
