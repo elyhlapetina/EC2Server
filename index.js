@@ -3,7 +3,6 @@ const express = require('express');
 const app = express();
 const bodyParser = require("body-parser");
 
-let ws;
 let fileScope = "{\"accel_x\": \"0\" , \"accel_y\" : \"0\" , \"accel_z\" : \"0\"}";
 let logs = "Logs start here:"
 
