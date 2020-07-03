@@ -37,7 +37,7 @@ app.post('/post-test', (req, res) => {
 	logs = logs + "<br> attemping to send message...  "
 
 	try {
-  		wss.ws.send(fileScope);
+  		ws.send(fileScope);
 	}
 	catch (e) {
   		// statements to handle any exceptions
