@@ -5,6 +5,9 @@ const bodyParser = require("body-parser");
 
 let fileScope = "{\"accel_x\": \"0\" , \"accel_y\" : \"0\" , \"accel_z\" : \"0\"}";
 
+let logs = "Logs start here:"
+
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
@@ -25,7 +28,7 @@ wss.on('connection', function connection(ws) {
 
 
 app.get('/', (req, res) => {
-  res.send(fileScope)
+  res.send(fileScope + "\n" + logs)
 });
 
 app.post('/post-test', (req, res) => {
