@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/elyhlapetina/EC2Server#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-ws": "^4.0.0",
     "nvm": "0.0.4"
   },
